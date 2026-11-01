@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Blood Night</title>
 <style>
-html,body{margin:0;height:100%;overflow:hidden;background:#000;touch-action:none;user-select:none;-webkit-user-select:none;font-family:system-ui,-apple-system,sans-serif;color:#fff}
-canvas{display:block;position:fixed;inset:0}
+/* 1. DEĞİŞİKLİK: Mobil adres çubuğu sorunlarını önlemek için 100dvh eklendi, genişlik 100% yapıldı */
+html,body{margin:0;padding:0;width:100%;height:100vh;height:100dvh;overflow:hidden;background:#000;touch-action:none;user-select:none;-webkit-user-select:none;font-family:system-ui,-apple-system,sans-serif;color:#fff}
+/* 2. DEĞİŞİKLİK: Canvas'ın yüksek çözünürlükte taşmaması için width ve height 100% ile sınırlandırıldı */
+canvas{display:block;position:fixed;inset:0;width:100%;height:100%}
 .btn{position:fixed;right:max(14px,env(safe-area-inset-right));width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.35);display:none;align-items:center;justify-content:center;flex-direction:column;font-size:22px;line-height:1;backdrop-filter:blur(2px)}
 .btn small{font-size:9px;opacity:.8;margin-top:2px}
 .btn:active{background:rgba(255,60,60,.45)}
@@ -28,7 +30,8 @@ body.touch .btn{display:flex}
 <script>
 const $=id=>document.getElementById(id),cv=$('g'),ctx=cv.getContext('2d'),lc=document.createElement('canvas'),lx=lc.getContext('2d');
 const WW=2400,WH=2400,R=Math.random,rr=(a,b)=>a+R()*(b-a),cl=(v,a,b)=>Math.max(a,Math.min(b,v));
-let W,H,DPR;function rs(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;lc.width=W;lc.height=H}
+// 3. DEĞİŞİKLİK: Piksel yoğunluğu (DPR) uygulandığında CSS boyutunun da güncellenmesi sağlandı (cv.style.width ve cv.style.height)
+let W,H,DPR;function rs(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;cv.style.width=W+'px';cv.style.height=H+'px';lc.width=W;lc.height=H}
 addEventListener('resize',rs);rs();
 
 // ───────── SES (WebAudio, dosyasız)
