@@ -1,51 +1,36 @@
 # 🩸 Blood Night
 
-Karanlık bir gecede zombi dalgalarına karşı hayatta kalmaya çalıştığın, tarayıcıda çalışan 2D nişancı oyunu. Tek dosya, kurulum yok, harici dosya yok. Hem bilgisayarda hem telefonda oynanır.
+HTML5 Canvas ve JavaScript ile geliştirilmiş, karanlık bir gecede geçen yukarıdan aşağıya (top-down) hayatta kalma ve nişancı (shooter) oyunu. Fenerinin aydınlattığı dar açılı görüş alanında zombilere karşı hayatta kalmaya çalış!
 
 ## ✨ Özellikler
 
-- **Karanlık atmosfer:** Fenerin yalnızca önünü aydınlatır, zombileri karanlıkta yakından görürsün
-- **Dalga sistemi:** Her dalgada daha çok ve daha güçlü zombi gelir, her 5. dalgada dev bir boss çıkar
-- **3 zombi tipi:** Yavaş, hızlı ve dev zombi
-- **3 silah:** Tabanca, SMG, pompalı tüfek. Zombilerden silah, mermi ve can düşer
-- **Kalıcı kan lekeleri**, ekran sarsıntısı, hasar alınca kırmızı ekran
-- **Atılma (dash)** ve dayanıklılık çubuğu
-- **Mobil destek:** Çift joystick ve ekran butonları
-- **Sesler:** Hepsi kodla üretilir (silah, vuruş, zombi inlemesi, korku uğultusu)
-- **En yüksek skor** tarayıcıda saklanır
+- **Tam Çapraz Platform (Cross-Platform) Desteği:** Oyun hem bilgisayar (PC) hem de mobil cihazlar için optimize edilmiştir.
+- **Duyarlı (Responsive) Tasarım:** Ekran çözünürlüğü veya cihaz fark etmeksizin ekranı tam kaplar ve taşma yapmaz (DPR optimizasyonu).
+- **Dinamik Kontroller:** PC'de klavye/fare, mobilde ise dokunmatik sanal joystick ve butonlarla kusursuz oynanış.
+- **Silah Çeşitliliği:** Tabanca, SMG ve Pompalı tüfek.
+- **Dalga (Wave) Sistemi:** Giderek zorlaşan ve farklı zombi türlerinin (koşucu, tank, boss) geldiği hayatta kalma mekaniği.
 
 ## 🎮 Kontroller
 
-| Eylem | Bilgisayar | Telefon |
-|---|---|---|
-| Yürü | W A S D / Oklar | Sol joystick |
-| Nişan al | Fare | Sağ joystick |
-| Ateş | Sol tık (basılı tut) | Sağ joystick'i it (otomatik ateş) |
-| Şarjör | R | 🔄 |
-| Silah değiştir | Q / 1-2-3 / Fare tekerleği | 🔫 |
-| Atıl | Boşluk / Shift | 💨 |
+### 💻 Bilgisayar (PC)
+- **Hareket:** `W` `A` `S` `D` veya Yön Tuşları
+- **Nişan Al / Ateş Et:** Fare (Mouse) ve Sol Tık
+- **Şarjör Yenile:** `R`
+- **Silah Değiştir:** `Q`, Fare Tekerleği veya `1` `2` `3`
+- **Atılma (Dash):** `Boşluk (Space)` veya `Shift`
 
-**Eşyalar:** 🔵 **W** silah · 🟡 **A** mermi · 🔴 **+** can
+### 📱 Mobil (Dokunmatik)
+- **Hareket:** Ekranın sol yarısında baş parmağınızı kaydırarak yönlendirin.
+- **Nişan / Ateş Et:** Ekranın sağ yarısında baş parmağınızı kaydırarak ateş edin.
+- **Aksiyonlar:** Ekrandaki **Silah**, **Şarjör** ve **Atıl** butonlarını kullanın.
 
-## ▶️ Çalıştırma
+## 🚀 Nasıl Çalıştırılır?
 
-`blood-night.html` dosyasını tarayıcıda aç ve **BAŞLA**'ya bas. İnternet bağlantısı gerekmez.
+Hiçbir sunucu kurulumuna veya bağımlılığa (dependency) ihtiyacınız yok. Sadece dosyaları indirin ve `index.html` dosyasını modern bir web tarayıcısında (Chrome, Safari, Edge vb.) açın.
 
-**GitHub Pages ile yayınlamak için:**
-1. Dosyanın adını `index.html` yap ve repoya yükle
-2. Repo → **Settings** → **Pages**
-3. Source: `Deploy from a branch`, branch: `main`, klasör: `/ (root)`
-4. Birkaç dakika sonra `https://KULLANICI_ADIN.github.io/REPO_ADI/` adresinden oynanır
+```bash
+# Depoyu klonlayın
+git clone [https://github.com/kullaniciadiniz/blood-night.git](https://github.com/kullaniciadiniz/blood-night.git)
 
-> Ses, tarayıcı kuralları gereği ilk tıklamadan veya dokunuştan sonra başlar.
-
-## 🛠️ Teknik notlar
-
-- Saf HTML + CSS + JavaScript, Canvas 2D, kütüphane yok
-- Zemin ve kan lekeleri önceden çizilen katmanlara işlenir, böylece telefonda da akıcı çalışır
-- Karanlık/fener efekti ayrı bir katmanla çizilir
-- Sesler WebAudio ile koddan üretilir
-
-## 📄 Lisans
-
-İstediğin lisansı ekleyebilirsin (örneğin MIT).
+# Klasöre girin ve index.html'i çalıştırın
+cd blood-night
